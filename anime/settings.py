@@ -77,12 +77,8 @@ WSGI_APPLICATION = 'anime.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres', 
-        'USER': 'railway', 
-        'PASSWORD': '3iomuAb74DfEUTxt6pK6',
-        'HOST': 'containers-us-west-97.railway.app', 
-        'PORT': '5909',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
