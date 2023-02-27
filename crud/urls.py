@@ -1,8 +1,8 @@
 from rest_framework import routers
-from .api import CrudAnimeViewSet
+from .api import AnimesViewSet
 
 router = routers.DefaultRouter()
 
-router.register('api/anime', CrudAnimeViewSet, 'anime')
+router.register('api/anime', AnimesViewSet, 'anime')
 
 urlpatterns = router.urls

@@ -1,8 +1,26 @@
 from rest_framework import serializers
-from .models import CrudAnime
+from .models import Animes, Mangas
 
 
-class CrudAnimeSerializer(serializers.ModelSerializer):
+class AnimesSerializer(serializers.ModelSerializer):
     class Meta:
-        model = CrudAnime
-        fields = ('id', 'title', 'score', 'synopsis', 'episodes', 'genres', 'studios')
+        model = Animes
+        fields = ('AnimeId',
+                  'AnimeTitle',
+                  'AnimeScore',
+                  'AnimeSynopsis',
+                  'AnimeEpisodes',
+                  'AnimeGenres',
+                  'AnimeStudios')
+
+
+class MangasSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Mangas
+        fields = ('MangaId',
+                  'MangaTitle',
+                  'MangaScore',
+                  'MangaSynopsis',
+                  'MangaEpisodes',
+                  'MangaGenres',
+                  'MangaStudios')

@@ -1,8 +1,8 @@
-from .models import CrudAnime
+from .models import Animes
 from rest_framework import viewsets, permissions
-from .serializers import CrudAnimeSerializer
+from .serializers import AnimesSerializer
 
-class CrudAnimeViewSet(viewsets.ModelViewSet):
-    queryset = CrudAnime.objects.all()
+class AnimesViewSet(viewsets.ModelViewSet):
+    queryset = Animes.objects.all()
     permission_classes = [permissions.AllowAny]
-    serializer_class = CrudAnimeSerializer
+    serializer_class = AnimesSerializer
