@@ -5,22 +5,23 @@ from .models import Animes, Mangas
 class AnimesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Animes
-        fields = ('AnimeId',
-                  'AnimeTitle',
-                  'AnimeScore',
-                  'AnimeSynopsis',
-                  'AnimeEpisodes',
-                  'AnimeGenres',
-                  'AnimeStudios')
+        fields = ('id',
+                  'title',
+                  'score',
+                  'synopsis',
+                  'episodes',
+                  'genres',
+                  'studios')
 
 
 class MangasSerializer(serializers.ModelSerializer):
     class Meta:
         model = Mangas
-        fields = ('MangaId',
-                  'MangaTitle',
-                  'MangaScore',
-                  'MangaSynopsis',
-                  'MangaEpisodes',
-                  'MangaGenres',
-                  'MangaStudios')
+        fields = ('id',
+                  'title',
+                  'score',
+                  'synopsis',
+                  'author',
+                  'chapters',
+                  'demographic',
+                  'publisher')

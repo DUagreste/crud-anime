@@ -1,8 +1,16 @@
-from rest_framework import routers
-from .api import AnimesViewSet
+from django.urls import path, re_path
+from crud import views
 
-router = routers.DefaultRouter()
+from django.conf.urls.static import static
+from django.conf import settings
 
-router.register('api/anime', AnimesViewSet, 'anime')
+urlpatterns = [
+    re_path(r'^anime/$', views.animeApi),
+    re_path(r'^anime/([0-9]+)$', views.animeApi),
 
-urlpatterns = router.urls
+    re_path(r'^manga/$', views.mangaApi),
+    re_path(r'^manga/([0-9]+)$', views.mangaApi),
+
+    re_path(r'^Anime/SaveFile$', views.SaveFile),
+    re_path(r'^Manga/SaveFile$', views.SaveFile),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
